@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mini_makers/pages/login_page.dart';
 import 'package:mini_makers/pages/onboarding_screen.dart';
 
 void main() {

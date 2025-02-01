@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mini_makers/pages/home_page.dart';
+import 'package:mini_makers/pages/onboarding_pages/first_page.dart';
+import 'package:mini_makers/pages/onboarding_pages/hardware_page.dart';
+import 'package:mini_makers/pages/onboarding_pages/software_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -11,7 +14,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   // cotroller to track pages
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   // track if we are in the last page or not
   bool onLastPage = false;
 
@@ -29,18 +32,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             });
           },
           children: [
-            Container(
-              color: Colors.pink,
-              child: Center(child: Text('Page One')),
-            ),
-            Container(
-              color: Colors.deepPurpleAccent,
-              child: Center(child: Text('Page Two')),
-            ),
-            Container(
-              color: Colors.lightBlueAccent,
-              child: Center(child: Text('Page Three')),
-            ),
+            FirstPage(),
+            SoftwarePage(),
+            HardwarePage(),
           ],
         ),
         // dot indicator
@@ -53,11 +47,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onTap: () {
                   _controller.jumpToPage(2);
                 },
-                child: Text('Skip'),
+                child: Text(
+                  'Skip',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
               SmoothPageIndicator(
                 controller: _controller,
                 count: 3,
+                effect: ScrollingDotsEffect(),
               ),
               // next or done
               onLastPage
@@ -69,16 +71,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           },
                         ));
                       },
-                      child: Text('Done'),
+                      child: Text(
+                        'Done',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     )
                   : GestureDetector(
                       onTap: () {
                         _controller.nextPage(
                           duration: Duration(milliseconds: 500),
-                          curve: Curves.bounceIn,
+                          curve: Curves.linearToEaseOut,
                         );
                       },
-                      child: Text('Next'),
+                      child: Text(
+                        'Next',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
             ],
           ),
