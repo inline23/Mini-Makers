@@ -29,11 +29,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 40),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return SevenYearsPage();
-                    },
-                  ));
+                  Navigator.pushNamed(context, '/sevenYearsPage');
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -57,11 +53,7 @@ class _HomePageState extends State<HomePage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return EightYearsPage();
-                    },
-                  ));
+                  Navigator.pushNamed(context, '/eightYearsPage');
                 },
                 child: Container(
                   decoration: BoxDecoration(

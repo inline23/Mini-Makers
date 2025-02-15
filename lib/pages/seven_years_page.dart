@@ -18,21 +18,13 @@ class SevenYearsPage extends StatelessWidget {
               title: "Lets Learn what is Scratch",
               imagePath: 'assets/scratch.jpg',
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ContentPage(),
-                    ));
+                Navigator.pushNamed(context, '/contentPage');
               },
             ),
             const SizedBox(height: 20),
             LevelTile(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DragAndDropPage(),
-                    ));
+                Navigator.pushNamed(context, '/dragAndDropPage');
               },
               imagePath: "assets/drag.jpeg",
               title: "What is Drag and Drop",

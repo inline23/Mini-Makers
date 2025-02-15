@@ -63,7 +63,15 @@ class _ContentPageState extends State<ContentPage> {
             ),
             const SizedBox(height: 25),
             // Question Tile
-            McqTile()
+            McqTile(
+              correctAnswer: 'a',
+              questionTitle: 'Scratch Based On :',
+              answerA: 'block-based',
+              answerB: 'programmin lang',
+              answerC: 'Prompet response',
+              answerD: 'OOP',
+              nextLevelPath: '/dragAndDropPage',
+            ),
           ],
         ),
       ),

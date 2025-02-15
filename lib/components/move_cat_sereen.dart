@@ -16,32 +16,28 @@ class _MovingCatScreenState extends State<MovingCatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.red, borderRadius: BorderRadius.circular(18)),
-        height: 300,
-        child: Stack(
-          children: [
-            AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
-              left: _leftPosition,
-              top: 150, // Fixed vertical position
-              child: Image.asset(
-                'assets/cat.png',
-                width: 100,
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                onPressed: _moveCat,
-                child: Text("Start Move"),
-              ),
-            ),
-          ],
+    return Stack(
+      children: [
+        AnimatedPositioned(
+          duration: Duration(milliseconds: 500),
+          left: _leftPosition,
+          top: 150, // Fixed vertical position
+          child: Image.asset(
+            'assets/cat.png',
+            width: 100,
+          ),
         ),
-      ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: ElevatedButton(
+            onPressed: _moveCat,
+            style: ButtonStyle(),
+            child: Text(
+              "Start Move",
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

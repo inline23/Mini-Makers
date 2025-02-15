@@ -1,0 +1,2 @@
+C:/programming/flutter/mini_makers/android/app/.cxx/Debug/c4ymp6z2/x86_64/CMakeFiles/edit_cache.dir
+C:/programming/flutter/mini_makers/android/app/.cxx/Debug/c4ymp6z2/x86_64/CMakeFiles/rebuild_cache.dir
