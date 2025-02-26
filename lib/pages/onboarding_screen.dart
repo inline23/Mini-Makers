@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mini_makers/pages/home_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/first_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/hardware_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/software_page.dart';

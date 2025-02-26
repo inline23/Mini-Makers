@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mini_makers/level.dart';
+import 'package:mini_makers/pages/lessons/seven_years_page.dart';
 
-class McqTile extends StatelessWidget {
-  McqTile({
+class McqTile extends StatefulWidget {
+  const McqTile({
     super.key,
     required this.correctAnswer,
     required this.nextLevelPath,
@@ -10,6 +12,8 @@ class McqTile extends StatelessWidget {
     required this.answerB,
     required this.answerC,
     required this.answerD,
+    required this.lessonId,
+    required this.level,
   });
 
   final String correctAnswer;
@@ -19,7 +23,14 @@ class McqTile extends StatelessWidget {
   final String answerB;
   final String answerC;
   final String answerD;
+  final int lessonId;
+  final int level;
 
+  @override
+  State<McqTile> createState() => _McqTileState();
+}
+
+class _McqTileState extends State<McqTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +45,7 @@ class McqTile extends StatelessWidget {
         children: [
           // question
           Text(
-            'Q) $questionTitle',
+            'Q) ${widget.questionTitle}',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -45,21 +56,29 @@ class McqTile extends StatelessWidget {
             children: [
               answerElement(
                 arrange: 'a',
-                answerText: answerA,
+                answerText: widget.answerA,
                 onPressed: () {
                   String arr = 'a';
-                  if (arr == correctAnswer) {
-                    Navigator.pushNamed(context, nextLevelPath);
+                  if (arr == widget.correctAnswer) {
+                    // Navigator.pushNamed(context, widget.nextLevelPath);
+                    setState(() {
+                      Level.levelsList[widget.level + 1].isCompleted = true;
+                    });
+                    return _showMyDialog();
                   }
                 },
               ),
               answerElement(
                 arrange: 'b',
-                answerText: answerB,
+                answerText: widget.answerB,
                 onPressed: () {
                   String arr = 'b';
-                  if (arr == correctAnswer) {
-                    Navigator.pushNamed(context, nextLevelPath);
+                  if (arr == widget.correctAnswer) {
+                    // Navigator.pushNamed(context, widget.nextLevelPath);
+                    setState(() {
+                      Level.levelsList[widget.level + 1].isCompleted = true;
+                    });
+                    return _showMyDialog();
                   }
                 },
               ),
@@ -70,21 +89,29 @@ class McqTile extends StatelessWidget {
             children: [
               answerElement(
                 arrange: 'c',
-                answerText: answerC,
+                answerText: widget.answerC,
                 onPressed: () {
                   String arr = 'c';
-                  if (arr == correctAnswer) {
-                    Navigator.pushNamed(context, nextLevelPath);
+                  if (arr == widget.correctAnswer) {
+                    // Navigator.pushNamed(context, widget.nextLevelPath);
+                    setState(() {
+                      Level.levelsList[widget.level + 1].isCompleted = true;
+                    });
+                    return _showMyDialog();
                   }
                 },
               ),
               answerElement(
                 arrange: 'd',
-                answerText: answerD,
+                answerText: widget.answerD,
                 onPressed: () {
                   String arr = 'd';
-                  if (arr == correctAnswer) {
-                    Navigator.pushNamed(context, nextLevelPath);
+                  if (arr == widget.correctAnswer) {
+                    // Navigator.pushNamed(context, widget.nextLevelPath);
+                    setState(() {
+                      Level.levelsList[widget.level + 1].isCompleted = true;
+                    });
+                    return _showMyDialog();
                   }
                 },
               ),
@@ -94,8 +121,49 @@ class McqTile extends StatelessWidget {
       ),
     );
   }
+
+  void _showMyDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false, // يمنع إغلاقه عند النقر خارجه
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.lightBlueAccent.shade100,
+          title: Text(
+            "Congratulations 👋",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: Text(
+            "Keep Going to Achive More Success",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => SevenYearsPage(),
+                ));
+              },
+              child: Text(
+                "Close",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class answerElement extends StatelessWidget {
   answerElement({
     super.key,
@@ -106,6 +174,8 @@ class answerElement extends StatelessWidget {
   final String arrange;
   final String answerText;
   void Function()? onPressed;
+
+  get context => null;
   @override
   Widget build(BuildContext context) {
     return TextButton(

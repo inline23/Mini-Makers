@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mini_makers/pages/eight_years_page.dart';
-import 'package:mini_makers/pages/seven_years_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,10 +1,15 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:mini_makers/components/mcq_tile.dart';
 import 'package:mini_makers/components/move_cat_sereen.dart';
+import 'package:mini_makers/level.dart';
+import 'package:mini_makers/pages/lessons/seven_years_page.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DragAndDropPage extends StatefulWidget {
-  const DragAndDropPage({super.key});
+  int level;
+  DragAndDropPage({super.key, required this.level});
 
   @override
   State<DragAndDropPage> createState() => _DragAndDropPageState();
@@ -17,23 +22,27 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade900,
-      appBar: AppBar(
-        title: Text('Drag and Drop'),
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
-        elevation: 1,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 15),
-        child: ListView(
-          children: [
-            YoutubePlayer(
+      // appBar: AppBar(
+      //   title: Text('Drag and Drop'),
+      //   backgroundColor: Colors.transparent,
+      //   foregroundColor: Colors.white,
+      //   elevation: 1,
+      // ),
+      body: ListView(
+        children: [
+          CustomAppBar(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: YoutubePlayer(
               controller: _controller,
               showVideoProgressIndicator: true,
             ),
-            const SizedBox(height: 10),
-            // Titile
-            Text(
+          ),
+          const SizedBox(height: 10),
+          // Titile
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Text(
               'What is Drag&Drop',
               style: TextStyle(
                 color: Colors.white,
@@ -41,18 +50,24 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 5),
-            // content
-            Text(
+          ),
+          const SizedBox(height: 5),
+          // content
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Text(
               'Drag and drop is a user interface (UI) interaction that allows users to move objects (such as files, text, or UI elements) by clicking (or tapping), dragging, and then releasing them in a different location. It is commonly used in operating systems, web applications, and mobile apps for intuitive interactions.',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
             ),
-            const SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
+          ),
+          const SizedBox(height: 25),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
                 'Example 1',
                 style: TextStyle(
@@ -60,7 +75,10 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                 ),
               ),
             ),
-            SizedBox(
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: SizedBox(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(18),
                 child: Image.asset(
@@ -69,35 +87,47 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 25),
-            Text(
+          ),
+          const SizedBox(height: 25),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Text(
               '''
-        in this example The cat will move 4 steps when I click on the green flag.
-        I chose the green flag event from the Events section on the left side of the screen and dragged it onto the page. Then, I dragged the move command.
-        ''',
+                in this example The cat will move 4 steps when I click on the green flag.
+                I chose the green flag event from the Events section on the left side of the screen and dragged it onto the page. Then, I dragged the move command.
+                ''',
               style: TextStyle(
                 color: Colors.white,
               ),
+              textAlign: TextAlign.center,
             ),
+          ),
 
-            // cat animation
-            // const SizedBox(height: 20),
-            Container(
+          // cat animation
+          // const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: SizedBox(
               height: 300,
               child: MovingCatScreen(),
             ),
-            // Question Tile
-            McqTile(
+          ),
+          // Question Tile
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: McqTile(
+              level: widget.level,
               correctAnswer: 'b',
-              questionTitle: 'Scratch Based On :',
-              answerA: 'block-based',
-              answerB: 'programmin lang',
-              answerC: 'textEdit',
-              answerD: 'OOP',
-              nextLevelPath: '/dragAndDropPage',
+              questionTitle: 'In Example 1 cat will move when :',
+              answerA: 'Space Click',
+              answerB: 'Green Flag',
+              answerC: 'No Move',
+              answerD: 'Right Arrow',
+              nextLevelPath: '/loopPage',
+              lessonId: 1,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -112,5 +142,39 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
       ),
     );
     super.initState();
+  }
+
+  Widget CustomAppBar() {
+    return Container(
+      // color: Colors.white,
+      height: 75,
+      width: double.infinity,
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SevenYearsPage(),
+                  ));
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              size: 16,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            Level.levelsList[widget.level].title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

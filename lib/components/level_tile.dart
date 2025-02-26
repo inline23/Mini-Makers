@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mini_makers/level.dart';
 
 // ignore: must_be_immutable
 class LevelTile extends StatelessWidget {
   void Function()? onTap;
   String? imagePath;
   String? title;
+  Level level;
   LevelTile({
     super.key,
     required this.onTap,
     required this.imagePath,
     required this.title,
+    required this.level,
   });
 
   @override
@@ -29,12 +32,22 @@ class LevelTile extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               // "Lets Learn what is Scratch"
-              child: Text(
-                title!,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    title!,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  level.isCompleted
+                      ? Icon(
+                          Icons.lock_open,
+                        )
+                      : Icon(Icons.lock),
+                ],
               ),
             ),
           ),
