@@ -3,12 +3,12 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:mini_makers/boxes.dart';
 import 'package:mini_makers/level.dart';
 import 'package:mini_makers/pages/home_page.dart';
-import 'package:mini_makers/pages/lessons/drag_and_drop_page.dart';
-import 'package:mini_makers/pages/lessons/eight_years_page.dart';
-import 'package:mini_makers/pages/lessons/if_else_page.dart';
-import 'package:mini_makers/pages/lessons/intro_scratch_page.dart';
-import 'package:mini_makers/pages/lessons/loop_page.dart';
-import 'package:mini_makers/pages/lessons/seven_years_page.dart';
+import 'package:mini_makers/pages/lessons/sevenYears/drag_and_drop_page.dart';
+import 'package:mini_makers/pages/lessons/eightYears/eight_years_page.dart';
+import 'package:mini_makers/pages/lessons/sevenYears/if_else_page.dart';
+import 'package:mini_makers/pages/lessons/sevenYears/intro_scratch_page.dart';
+import 'package:mini_makers/pages/lessons/sevenYears/loop_page.dart';
+import 'package:mini_makers/pages/lessons/sevenYears/seven_years_page.dart';
 import 'package:mini_makers/pages/onboarding_screen.dart';
 
 void main() async {

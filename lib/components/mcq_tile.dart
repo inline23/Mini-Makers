@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_makers/level.dart';
-import 'package:mini_makers/pages/lessons/seven_years_page.dart';
+import 'package:mini_makers/pages/lessons/sevenYears/seven_years_page.dart';
 
 class McqTile extends StatefulWidget {
   const McqTile({

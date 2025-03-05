@@ -1,0 +1,2 @@
+C:/waleed/programming/flutter/mini_makers/android/app/.cxx/RelWithDebInfo/2d36392f/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/waleed/programming/flutter/mini_makers/android/app/.cxx/RelWithDebInfo/2d36392f/armeabi-v7a/CMakeFiles/rebuild_cache.dir
