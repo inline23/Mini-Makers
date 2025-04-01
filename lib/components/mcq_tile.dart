@@ -62,6 +62,7 @@ class _McqTileState extends State<McqTile> {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
+                      Level.levelsList2[widget.level + 1].isCompleted = true;
                     });
                     return _showMyDialog(
                       'Congratulations',
@@ -90,6 +91,7 @@ class _McqTileState extends State<McqTile> {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
+                      Level.levelsList2[widget.level + 1].isCompleted = true;
                     });
                     return _showMyDialog(
                       'Congratulations',
@@ -123,6 +125,7 @@ class _McqTileState extends State<McqTile> {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
+                      Level.levelsList2[widget.level + 1].isCompleted = true;
                     });
                     return _showMyDialog(
                       'Congratulations',
@@ -151,6 +154,7 @@ class _McqTileState extends State<McqTile> {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
+                      Level.levelsList2[widget.level + 1].isCompleted = true;
                     });
                     return _showMyDialog(
                       'Congratulations',

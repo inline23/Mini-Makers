@@ -59,9 +59,9 @@ class _IntroductionToProgrammingState extends State<IntroductionToProgramming> {
                     Text(
                       '''Programming is the process of giving instructions to a computer to perform specific tasks. It involves writing code using a programming language, such as Python, Java, or C++, to create software applications, websites, games, and more.
           
-        Computers do not understand human language, so programmers use special languages with clear rules and syntax to communicate with them. These instructions tell the computer what to do, step by step.
+Computers do not understand human language, so programmers use special languages with clear rules and syntax to communicate with them. These instructions tell the computer what to do, step by step.
           
-        Programming is used in almost every field today, from healthcare and finance to entertainment and education. Learning to program helps develop problem-solving skills and opens up many career opportunities in the technology industry
+Programming is used in almost every field today, from healthcare and finance to entertainment and education. Learning to program helps develop problem-solving skills and opens up many career opportunities in the technology industry
             ''',
                       textAlign: TextAlign.start,
                       style: TextStyle(
@@ -106,19 +106,17 @@ class _IntroductionToProgrammingState extends State<IntroductionToProgramming> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                      child: McqTile(
-                        level: widget.level,
-                        correctAnswer: 'b',
-                        questionTitle: 'In Example 1 cat will move when :',
-                        answerA: 'Space Click',
-                        answerB: 'Green Flag',
-                        answerC: 'No Move',
-                        answerD: 'Right Arrow',
-                        nextLevelPath: '/loopPy',
-                        lessonId: 1,
-                      ),
+                    McqTile(
+                      level: widget.level,
+                      correctAnswer: 'b',
+                      questionTitle:
+                          'what is the correct syntax to \ndisplay Ahmed',
+                      answerA: 'print \'Ahmed\'',
+                      answerB: 'print (\'Ahmed\')',
+                      answerC: 'Cout<<"Ahmed"',
+                      answerD: 'None',
+                      nextLevelPath: '/loopPy',
+                      lessonId: 1,
                     ),
                   ],
                 ),

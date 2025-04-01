@@ -35,18 +35,22 @@ class LevelTile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    title!,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  // Text(
+                  //   title!,
+                  //   style: TextStyle(
+                  //     color: Colors.lightBlue.shade900,
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  // ),
                   level.isCompleted
                       ? Icon(
                           Icons.lock_open,
+                          color: Colors.lightBlue.shade900,
                         )
-                      : Icon(Icons.lock),
+                      : Icon(
+                          Icons.lock,
+                          color: Colors.lightBlue.shade900,
+                        ),
                 ],
               ),
             ),

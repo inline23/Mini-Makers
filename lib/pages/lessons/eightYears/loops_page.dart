@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mini_makers/components/mcq_tile.dart';
 import 'package:mini_makers/pages/lessons/eightYears/eight_years_page.dart';
 
 class LoopsPage extends StatelessWidget {
-  const LoopsPage({super.key});
+  final int level;
+  const LoopsPage({super.key, required this.level});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,8 @@ class LoopsPage extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 14),
+                padding:
+                    const EdgeInsets.only(left: 24.0, right: 24.0, top: 14),
                 child: ListView(
                   children: [
                     Text(
@@ -53,12 +56,12 @@ class LoopsPage extends StatelessWidget {
                     Text(
                       '''Loops are used in programming to execute a block of code multiple times without writing it repeatedly. There are two main types of loops in Python:
               
-              For Loop – Used when the number of iterations is known.
-              While Loop – Used when the number of iterations is unknown and depends on a condition.
-              1. For Loop
-              A for loop iterates over a sequence (list, tuple, string, etc.).
+For Loop – Used when the number of iterations is known.
+While Loop – Used when the number of iterations is unknown and depends on a condition.
+1. For Loop
+A for loop iterates over a sequence (list, tuple, string, etc.).
               
-              Example: Print numbers from 1 to 5
+Example: Print numbers from 1 to 5
               ''',
                       style: TextStyle(
                         color: Colors.white,
@@ -74,9 +77,9 @@ class LoopsPage extends StatelessWidget {
                     const SizedBox(height: 10),
                     Text(
                       '''2. While Loop
-              A while loop runs as long as a condition remains True.
+A while loop runs as long as a condition remains True.
               
-              Example: Print numbers from 1 to 5
+Example: Print numbers from 1 to 5
               ''',
                       style: TextStyle(
                         color: Colors.white,
@@ -88,6 +91,19 @@ class LoopsPage extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(14),
                       child: Image.asset('assets/whilePy.png'),
+                    ),
+                    const SizedBox(height: 10),
+                    McqTile(
+                      level: level,
+                      correctAnswer: 'd',
+                      questionTitle:
+                          'while True:\n        print("Hola")\nthis Code will Stop when print',
+                      answerA: '100 Times',
+                      answerB: '10 Times',
+                      answerC: '1',
+                      answerD: 'None',
+                      nextLevelPath: '/condition',
+                      lessonId: 1,
                     ),
                     const SizedBox(height: 10),
                   ],

@@ -40,9 +40,9 @@ class MyApp extends StatelessWidget {
         '/loopPage': (context) => LoopPage(level: 2,),
         '/ifElsePage': (context) => IfElsePage(level: 3,),
         '/introtoProgramming': (context) => IntroductionToProgramming(level: 0),
-        '/Variables': (context) => VariablesPage(),
-        '/loopPy': (context) => LoopsPage(),
-        '/condition': (context) => ConditionPage(),
+        '/Variables': (context) => VariablesPage(level: 1),
+        '/loopPy': (context) => LoopsPage(level :2),
+        '/condition': (context) => ConditionPage(level:3 ),
       },
       debugShowCheckedModeBanner: false,
     );
