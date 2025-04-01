@@ -3,6 +3,10 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:mini_makers/boxes.dart';
 import 'package:mini_makers/level.dart';
 import 'package:mini_makers/pages/home_page.dart';
+import 'package:mini_makers/pages/lessons/eightYears/condition_page.dart';
+import 'package:mini_makers/pages/lessons/eightYears/introduction_to_programming.dart';
+import 'package:mini_makers/pages/lessons/eightYears/loops_page.dart';
+import 'package:mini_makers/pages/lessons/eightYears/variables_page.dart';
 import 'package:mini_makers/pages/lessons/sevenYears/drag_and_drop_page.dart';
 import 'package:mini_makers/pages/lessons/eightYears/eight_years_page.dart';
 import 'package:mini_makers/pages/lessons/sevenYears/if_else_page.dart';
@@ -35,6 +39,10 @@ class MyApp extends StatelessWidget {
         '/contentPage': (context) => IntroScratchPage(level:0),
         '/loopPage': (context) => LoopPage(level: 2,),
         '/ifElsePage': (context) => IfElsePage(level: 3,),
+        '/introtoProgramming': (context) => IntroductionToProgramming(level: 0),
+        '/Variables': (context) => VariablesPage(),
+        '/loopPy': (context) => LoopsPage(),
+        '/condition': (context) => ConditionPage(),
       },
       debugShowCheckedModeBanner: false,
     );

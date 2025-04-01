@@ -37,6 +37,32 @@ class Level {
         isCompleted: false,
       ),
     ];
+  static List<Level> levelsList2 = [
+      Level(
+        title: "Introduction to Programming",
+        imagePath: 'assets/introprogramming.png',
+        contentPath: '/introtoProgramming',
+        isCompleted: true,
+      ),
+      Level(
+        title: "Variables",
+        imagePath: 'assets/varinPy.png',
+        contentPath: '/Variables',
+        isCompleted: false,
+      ),
+      Level(
+        title: "Loops",
+        imagePath: 'assets/Loops-in-programming-768.jpg',
+        contentPath: '/loopPy',
+        isCompleted: false,
+      ),
+      Level(
+        title: "Conditions",
+        imagePath: 'assets/javascript-if-else-statement.png',
+        contentPath: '/condition',
+        isCompleted: false,
+      ),
+    ];
 
   @HiveField(0)
   String title;

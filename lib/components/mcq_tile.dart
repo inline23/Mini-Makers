@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mini_makers/level.dart';
-import 'package:mini_makers/pages/lessons/sevenYears/seven_years_page.dart';
 
 class McqTile extends StatefulWidget {
   const McqTile({
@@ -64,13 +63,21 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog('Congratulations',
-                        'Keep Going to achive more success', (Colors.green));
+                    return _showMyDialog(
+                      'Congratulations',
+                      'Keep Going to achive more success',
+                      (Colors.green),
+                      "Next",
+                      widget.nextLevelPath,
+                    );
                   } else {
                     return _showMyDialog(
-                        "Wrong answer",
-                        "Try again, don't give up.",
-                        (Colors.redAccent.shade200));
+                      "Wrong answer",
+                      "Try again, don't give up.",
+                      (Colors.redAccent.shade200),
+                      "Close",
+                      "/",
+                    );
                   }
                 },
               ),
@@ -84,13 +91,21 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog('Congratulations',
-                        'Keep Going to achive more success', (Colors.green));
+                    return _showMyDialog(
+                      'Congratulations',
+                      'Keep Going to achive more success',
+                      (Colors.green),
+                      "Next",
+                      widget.nextLevelPath,
+                    );
                   } else {
                     return _showMyDialog(
-                        "Wrong answer",
-                        "Try again, don't give up.",
-                        (Colors.redAccent.shade200));
+                      "Wrong answer",
+                      "Try again, don't give up.",
+                      (Colors.redAccent.shade200),
+                      "Close",
+                      "/",
+                    );
                   }
                 },
               ),
@@ -109,13 +124,21 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog('Congratulations',
-                        'Keep Going to achive more success', (Colors.green));
+                    return _showMyDialog(
+                      'Congratulations',
+                      'Keep Going to achive more success',
+                      (Colors.green),
+                      "Next",
+                      widget.nextLevelPath,
+                    );
                   } else {
                     return _showMyDialog(
-                        "Wrong answer",
-                        "Try again, don't give up.",
-                        (Colors.redAccent.shade200));
+                      "Wrong answer",
+                      "Try again, don't give up.",
+                      (Colors.redAccent.shade200),
+                      "Close",
+                      "/",
+                    );
                   }
                 },
               ),
@@ -129,13 +152,20 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog('Congratulations',
-                        'Keep Going to achive more success', (Colors.green));
+                    return _showMyDialog(
+                      'Congratulations',
+                      'Keep Going to achive more success',
+                      (Colors.green),
+                      "Next",
+                      widget.nextLevelPath,
+                    );
                   } else {
                     return _showMyDialog(
                         "Wrong answer",
                         "Try again, don't give up.",
-                        (Colors.redAccent.shade200));
+                        (Colors.redAccent.shade200),
+                        "Close",
+                        "/");
                   }
                 },
               ),
@@ -146,7 +176,8 @@ class _McqTileState extends State<McqTile> {
     );
   }
 
-  void _showMyDialog(String title, String desc, Color color) {
+  void _showMyDialog(
+      String title, String desc, Color color, String btnText, String navPath) {
     showDialog(
       context: context,
       barrierDismissible: false, // يمنع إغلاقه عند النقر خارجه
@@ -169,12 +200,18 @@ class _McqTileState extends State<McqTile> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => SevenYearsPage(),
-                ));
+                if (navPath == '/') {
+                  Navigator.pop(context);
+                } else {
+                  // Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  //   builder: (context) => SevenYearsPage(),
+                  // ));
+                  Navigator.pushNamed(context, navPath);
+                  // Navigator.pop(context);
+                }
               },
               child: Text(
-                "Close",
+                btnText,
                 style: TextStyle(
                   color: Colors.white,
                 ),

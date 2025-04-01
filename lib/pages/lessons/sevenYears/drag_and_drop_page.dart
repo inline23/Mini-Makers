@@ -22,12 +22,6 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade900,
-      // appBar: AppBar(
-      //   title: Text('Drag and Drop'),
-      //   backgroundColor: Colors.transparent,
-      //   foregroundColor: Colors.white,
-      //   elevation: 1,
-      // ),
       body: ListView(
         children: [
           CustomAppBar(),
