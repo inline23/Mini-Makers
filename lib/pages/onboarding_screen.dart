@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_makers/pages/home_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/first_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/hardware_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/software_page.dart';
@@ -44,7 +45,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               GestureDetector(
                 onTap: () {
-                  _controller.jumpToPage(2);
+                  // _controller.jumpToPage(2);
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ));
                 },
                 child: Text(
                   'Skip',
@@ -64,7 +70,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onLastPage
                   ? GestureDetector(
                       onTap: () {
-                       Navigator.pushNamed(context, '/homePage');
+                        Navigator.pushNamed(context, '/homePage');
                       },
                       child: Text(
                         'Done',

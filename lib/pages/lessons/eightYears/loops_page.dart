@@ -17,7 +17,7 @@ class LoopsPage extends StatelessWidget {
         child: ListView(
           children: [
             Text(
-              'Introduction to Loops in C++',
+              'Introduction to Loops',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -25,18 +25,14 @@ class LoopsPage extends StatelessWidget {
               ),
             ),
             Text(
-              '''Loops in C++ are used to execute a block of code multiple times. Instead of writing the same code repeatedly, we can use loops to make the program more efficient and readable. There are three main types of loops in C++:
+              '''Loops are used in programming to execute a block of code multiple times without writing it repeatedly. There are two main types of loops in Python:
 
-For Loop
-While Loop
-Do-While Loop
-
+For Loop – Used when the number of iterations is known.
+While Loop – Used when the number of iterations is unknown and depends on a condition.
 1. For Loop
-The for loop is used when the number of iterations is known. It consists of three parts:
+A for loop iterates over a sequence (list, tuple, string, etc.).
 
-Initialization: Sets the starting value.
-Condition: Checks if the loop should continue.
-Update: Changes the loop variable after each iteration
+Example: Print numbers from 1 to 5
 ''',
               style: TextStyle(
                 color: Colors.white,
@@ -47,98 +43,27 @@ Update: Changes the loop variable after each iteration
             const SizedBox(height: 10),
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/loo.png'),
+              child: Image.asset('assets/loopPy1.png'),
             ),
             const SizedBox(height: 10),
-            Text(
-              'Output',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/looO.png'),
-            ),
             Text(
               '''2. While Loop
-The while loop is used when the number of iterations is not known in advance. It runs as long as the condition remains true.
-''',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-              ),
-            ),
-            const SizedBox(height: 10),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/while.png'),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Output',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/looO.png'),
-            ),
-            Text(
-              '''3. Do-While Loop
-The do-while loop is similar to the while loop, but it executes at least once before checking the condition.
-''',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-              ),
-            ),
-            const SizedBox(height: 10),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/dowhile.png'),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Output',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/looO.png'),
-            ),
-            Text(
-              'Conclusion',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            Text(
-              '''Loops are essential in C++ programming as they allow us to execute a block of code multiple times efficiently.
+A while loop runs as long as a condition remains True.
 
-Use for loops when the number of iterations is known.
-Use while loops when the number of iterations is unknown and depends on a condition.
-Use do-while loops when you need to run the code at least once before checking the condition.
+Example: Print numbers from 1 to 5
 ''',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
               ),
-            )
+            ),
+            const SizedBox(height: 2),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: Image.asset('assets/whilePy.png'),
+            ),
+            const SizedBox(height: 10),
           ],
         ),
       ),

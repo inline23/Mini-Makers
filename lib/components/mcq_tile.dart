@@ -64,7 +64,13 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog();
+                    return _showMyDialog('Congratulations',
+                        'Keep Going to achive more success', (Colors.green));
+                  } else {
+                    return _showMyDialog(
+                        "Wrong answer",
+                        "Try again, don't give up.",
+                        (Colors.redAccent.shade200));
                   }
                 },
               ),
@@ -78,7 +84,13 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog();
+                    return _showMyDialog('Congratulations',
+                        'Keep Going to achive more success', (Colors.green));
+                  } else {
+                    return _showMyDialog(
+                        "Wrong answer",
+                        "Try again, don't give up.",
+                        (Colors.redAccent.shade200));
                   }
                 },
               ),
@@ -97,7 +109,13 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog();
+                    return _showMyDialog('Congratulations',
+                        'Keep Going to achive more success', (Colors.green));
+                  } else {
+                    return _showMyDialog(
+                        "Wrong answer",
+                        "Try again, don't give up.",
+                        (Colors.redAccent.shade200));
                   }
                 },
               ),
@@ -111,7 +129,13 @@ class _McqTileState extends State<McqTile> {
                     setState(() {
                       Level.levelsList[widget.level + 1].isCompleted = true;
                     });
-                    return _showMyDialog();
+                    return _showMyDialog('Congratulations',
+                        'Keep Going to achive more success', (Colors.green));
+                  } else {
+                    return _showMyDialog(
+                        "Wrong answer",
+                        "Try again, don't give up.",
+                        (Colors.redAccent.shade200));
                   }
                 },
               ),
@@ -122,22 +146,22 @@ class _McqTileState extends State<McqTile> {
     );
   }
 
-  void _showMyDialog() {
+  void _showMyDialog(String title, String desc, Color color) {
     showDialog(
       context: context,
       barrierDismissible: false, // يمنع إغلاقه عند النقر خارجه
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.lightBlueAccent.shade100,
+          backgroundColor: color, //Colors.lightBlueAccent.shade100,
           title: Text(
-            "Congratulations 👋",
+            title,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),
           content: Text(
-            "Keep Going to Achive More Success",
+            desc,
             style: TextStyle(
               color: Colors.white,
             ),

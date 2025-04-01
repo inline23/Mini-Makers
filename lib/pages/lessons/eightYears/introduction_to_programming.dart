@@ -20,7 +20,8 @@ class _IntroductionToProgrammingState extends State<IntroductionToProgramming> {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+          padding:
+              const EdgeInsets.only(left: 24, right: 24, top: 24, bottom: 24),
           child: ListView(
             children: [
               Text(
@@ -38,7 +39,7 @@ Programming is used in almost every field today, from healthcare and finance to 
               ),
               const SizedBox(height: 20),
               Text(
-                'C++ ?',
+                'Python ?',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -51,7 +52,7 @@ Programming is used in almost every field today, from healthcare and finance to 
                 child: Image.asset('assets/helloWorld.png'),
               ),
               Text(
-                'lets take our the most popular example -> helloWorld.\nhow we can do it with c++?',
+                'lets take our the most popular example -> helloWorld.\nhow we can do it with python?',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
@@ -61,54 +62,15 @@ Programming is used in almost every field today, from healthcare and finance to 
               const SizedBox(height: 10),
               ClipRRect(
                 borderRadius: BorderRadius.circular(14),
-                child: Image.asset('assets/helloWorldc.png'),
+                child: Image.asset('assets/hpy.png'),
               ),
               const SizedBox(height: 10),
               Text(
-                'Lets Explain Every Line ',
+                'with this line you can code program display hello world ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                '''1. #include <iostream>
-This is a preprocessor directive that tells the compiler to include the iostream (input-output stream) library.
-The <iostream> library contains functions for standard input (cin), output (cout), and error handling (cerr and clog).
-Without this, you wouldn’t be able to use cout for printing to the console or cin for reading input
-2. using namespace std;
-The C++ Standard Library defines functions, classes, and objects inside a namespace called std.
-
-Writing using namespace std; allows us to use these objects (like cout, cin, etc.) without having to prefix them with std:: every time.
-
-Without this line, you would need to write:
-''',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(14),
-                child: Image.asset('assets/screenHello.png'),
-              ),
-              Text(
-                '''3.int main () {}
-this {} call Scope 
-in Scope{in this space we write our code .
-when we run our program the compiler read from first line in main} 
-4. cout<<"helloWolrd!." ; 
-this line mean print hellow world
-Note
-this message hello world is a String 
-thats mean when we want to save string we should use "dsf"
-''',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],

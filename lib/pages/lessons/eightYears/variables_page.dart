@@ -17,7 +17,7 @@ class VariablesPage extends StatelessWidget {
         child: ListView(
           children: [
             Text(
-              'Introduction to Variables in C++',
+              'Introduction to Variables in Python',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -25,13 +25,13 @@ class VariablesPage extends StatelessWidget {
               ),
             ),
             Text(
-              '''In programming, variables are used to store data that can be changed during the execution of a program. A variable is like a container that holds a value. Each variable has:
+              '''A variable in Python is a container that stores data. It allows you to save values and use them later in your program.
 
-A name (identifier)
-A type (determines what kind of data it can store)
-A value (the actual data stored in it)
-Declaring and Initializing Variables in C++
-In C++, you must declare a variable before using it. The general syntax is:
+Key Points About Variables:
+1.No need to declare type – Python automatically assigns the type based on the value.
+2.Can store different data types – Numbers, text, lists, etc.
+3.Names are case-sensitive – age and Age are different variables.
+4.Should start with a letter or underscore (_), not a number.
 ''',
               style: TextStyle(
                 color: Colors.white,
@@ -42,31 +42,12 @@ In C++, you must declare a variable before using it. The general syntax is:
             const SizedBox(height: 10),
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/datatype.png'),
-            ),
-            Text(
-              '''data_type: Specifies the type of value the variable will store (e.g., int, float, char, string).
-variable_name: The name of the variable (e.g., age, price).
-value (optional): The initial value assigned to the variable
-''',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fontSize: 14,
-              ),
-            ),
-            Text(
-              'Example with C++',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
+              child: Image.asset('assets/vpy.png'),
             ),
             const SizedBox(height: 10),
             ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/exc.png'),
+              borderRadius: BorderRadius.circular(24),
+              child: Image.asset('assets/ovpy.png'),
             ),
             Text(
               'Finally',
@@ -101,12 +82,12 @@ In addition, there are symbols that cannot be used, such as “;
             const SizedBox(height: 10),
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/cinEx.png'),
+              child: Image.asset('assets/vpy1.png'),
             ),
             const SizedBox(height: 10),
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
-              child: Image.asset('assets/rescin.png'),
+              child: Image.asset('assets/vpo.png'),
             ),
             const SizedBox(height: 10),
           ],
