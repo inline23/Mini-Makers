@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
     TextEditingController loginInput = TextEditingController();
     String defPass = '0000';
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 223, 223, 223),
+      backgroundColor: Colors.lightBlue.shade900,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -27,6 +27,7 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 42,
+                      color: Colors.white,
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -35,6 +36,7 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 42,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -50,6 +52,9 @@ class LoginPage extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter Login Key",
+                      hintStyle: TextStyle(
+                        color: Colors.grey.shade400,
+                      ),
                     ),
                   ),
                 ),
@@ -65,7 +70,7 @@ class LoginPage extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Colors.lightBlue.shade200,
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Padding(

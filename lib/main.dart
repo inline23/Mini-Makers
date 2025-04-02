@@ -13,6 +13,7 @@ import 'package:mini_makers/pages/lessons/sevenYears/if_else_page.dart';
 import 'package:mini_makers/pages/lessons/sevenYears/intro_scratch_page.dart';
 import 'package:mini_makers/pages/lessons/sevenYears/loop_page.dart';
 import 'package:mini_makers/pages/lessons/sevenYears/seven_years_page.dart';
+import 'package:mini_makers/pages/login_page.dart';
 import 'package:mini_makers/pages/onboarding_screen.dart';
 
 void main() async {
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/Variables': (context) => VariablesPage(level: 1),
         '/loopPy': (context) => LoopsPage(level :2),
         '/condition': (context) => ConditionPage(level:3 ),
+        '/login': (context) => LoginPage(),
       },
       debugShowCheckedModeBanner: false,
     );

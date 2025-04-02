@@ -15,7 +15,9 @@ class IfElsePage extends StatefulWidget {
 
 class _LoopPageState extends State<IfElsePage> {
   final vedioUrl = 'https://youtu.be/Sb-1xWrmr6Q?si=FvrWQSblMa--gL_v';
+  final vedioUrl1 = 'https://youtu.be/kahw_KSlzjU?si=p-88FDXpiOZ2pxKD';
   late YoutubePlayerController _controller;
+  late YoutubePlayerController _controller1;
   late VideoPlayerController _videoController;
   late VideoPlayerController _controlller;
   late Future<void> _initlizeVideoPlayerFuture;
@@ -87,6 +89,11 @@ class _LoopPageState extends State<IfElsePage> {
                       textAlign: TextAlign.start,
                     ),
                     const SizedBox(height: 20),
+                    YoutubePlayer(
+                      controller: _controller1,
+                      showVideoProgressIndicator: true,
+                    ),
+                    const SizedBox(height: 10),
 
                     Text(
                       'Show this Example',
@@ -197,6 +204,14 @@ class _LoopPageState extends State<IfElsePage> {
     final vedioID = YoutubePlayer.convertUrlToId(vedioUrl);
     _controller = YoutubePlayerController(
       initialVideoId: vedioID!,
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
+      ),
+    );
+    // YouTube Player initialization
+    final vedioID1 = YoutubePlayer.convertUrlToId(vedioUrl1);
+    _controller1 = YoutubePlayerController(
+      initialVideoId: vedioID1!,
       flags: const YoutubePlayerFlags(
         autoPlay: false,
       ),

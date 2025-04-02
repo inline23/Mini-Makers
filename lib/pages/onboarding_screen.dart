@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_makers/pages/home_page.dart';
+import 'package:mini_makers/pages/login_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/first_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/hardware_page.dart';
 import 'package:mini_makers/pages/onboarding_pages/software_page.dart';
@@ -49,7 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => LoginPage(),
                       ));
                 },
                 child: Text(
@@ -70,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onLastPage
                   ? GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/homePage');
+                        Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
                         'Done',

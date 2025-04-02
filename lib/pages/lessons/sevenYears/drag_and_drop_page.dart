@@ -17,7 +17,9 @@ class DragAndDropPage extends StatefulWidget {
 
 class _DragAndDropPageState extends State<DragAndDropPage> {
   final vedioUrl = 'https://youtu.be/3yDJp21ApUk?si=EsYMwsKp-wrI7hU_';
+  final vedioUrl1 = 'https://youtu.be/b37s1vJwP_o?si=Sk-tUrrv4nVDYUnA';
   late YoutubePlayerController _controller;
+  late YoutubePlayerController _controller1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,11 +61,30 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
           ),
           const SizedBox(height: 25),
           Padding(
+            padding: const EdgeInsets.only(left: 24.0),
+            child: Text(
+              'How to use Scratch',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: YoutubePlayer(
+              controller: _controller1,
+              showVideoProgressIndicator: true,
+            ),
+          ),
+          const SizedBox(height: 25),
+          Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
-                'Example 1',
+                'Example',
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -86,14 +107,13 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Text(
-              '''
-                in this example The cat will move 4 steps when I click on the green flag.
-                I chose the green flag event from the Events section on the left side of the screen and dragged it onto the page. Then, I dragged the move command.
+              '''in this example The cat will move 4 steps when I click on the green flag.
+I chose the green flag event from the Events section on the left side of the screen and dragged it onto the page. Then, I dragged the move command.
                 ''',
               style: TextStyle(
                 color: Colors.white,
               ),
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
             ),
           ),
 
@@ -106,6 +126,7 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
               child: MovingCatScreen(),
             ),
           ),
+          const SizedBox(height: 25),
           // Question Tile
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -121,6 +142,7 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
               lessonId: 1,
             ),
           ),
+          const SizedBox(height: 25),
         ],
       ),
     );
@@ -131,6 +153,13 @@ class _DragAndDropPageState extends State<DragAndDropPage> {
     final vedioID = YoutubePlayer.convertUrlToId(vedioUrl);
     _controller = YoutubePlayerController(
       initialVideoId: vedioID!,
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+      ),
+    );
+    final vedioID1 = YoutubePlayer.convertUrlToId(vedioUrl1);
+    _controller1 = YoutubePlayerController(
+      initialVideoId: vedioID1!,
       flags: YoutubePlayerFlags(
         autoPlay: false,
       ),

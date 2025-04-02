@@ -37,6 +37,7 @@ class Level {
         isCompleted: false,
       ),
     ];
+    
   static List<Level> levelsList2 = [
       Level(
         title: "Introduction to Programming",
