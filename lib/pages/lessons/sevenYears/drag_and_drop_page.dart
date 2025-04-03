@@ -131,6 +131,7 @@ I chose the green flag event from the Events section on the left side of the scr
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: McqTile(
+              isSevenYears: true,
               level: widget.level,
               correctAnswer: 'b',
               questionTitle: 'In Example 1 cat will move when :',

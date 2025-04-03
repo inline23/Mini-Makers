@@ -94,6 +94,7 @@ Example: Print numbers from 1 to 5
                     ),
                     const SizedBox(height: 10),
                     McqTile(
+                      isSevenYears: false,
                       level: level,
                       correctAnswer: 'd',
                       questionTitle:

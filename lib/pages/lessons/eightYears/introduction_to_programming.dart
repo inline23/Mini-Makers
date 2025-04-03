@@ -107,6 +107,7 @@ Programming is used in almost every field today, from healthcare and finance to 
                     ),
                     const SizedBox(height: 10),
                     McqTile(
+                      isSevenYears: false,
                       level: widget.level,
                       correctAnswer: 'b',
                       questionTitle:

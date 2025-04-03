@@ -13,6 +13,7 @@ class McqTile extends StatefulWidget {
     required this.answerD,
     required this.lessonId,
     required this.level,
+    required this.isSevenYears,
   });
 
   final String correctAnswer;
@@ -24,6 +25,7 @@ class McqTile extends StatefulWidget {
   final String answerD;
   final int lessonId;
   final int level;
+  final bool isSevenYears;
 
   @override
   State<McqTile> createState() => _McqTileState();
@@ -61,8 +63,11 @@ class _McqTileState extends State<McqTile> {
                   if (arr == widget.correctAnswer) {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
-                      Level.levelsList[widget.level + 1].isCompleted = true;
-                      Level.levelsList2[widget.level + 1].isCompleted = true;
+                      if (widget.isSevenYears) {
+                        Level.levelsList[widget.level + 1].isCompleted = true;
+                      } else {
+                        Level.levelsList2[widget.level + 1].isCompleted = true;
+                      }
                     });
                     return _showMyDialog(
                       'Congratulations',
@@ -90,8 +95,11 @@ class _McqTileState extends State<McqTile> {
                   if (arr == widget.correctAnswer) {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
-                      Level.levelsList[widget.level + 1].isCompleted = true;
-                      Level.levelsList2[widget.level + 1].isCompleted = true;
+                      if (widget.isSevenYears) {
+                        Level.levelsList[widget.level + 1].isCompleted = true;
+                      } else {
+                        Level.levelsList2[widget.level + 1].isCompleted = true;
+                      }
                     });
                     return _showMyDialog(
                       'Congratulations',
@@ -124,8 +132,11 @@ class _McqTileState extends State<McqTile> {
                   if (arr == widget.correctAnswer) {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
-                      Level.levelsList[widget.level + 1].isCompleted = true;
-                      Level.levelsList2[widget.level + 1].isCompleted = true;
+                      if (widget.isSevenYears) {
+                        Level.levelsList[widget.level + 1].isCompleted = true;
+                      } else {
+                        Level.levelsList2[widget.level + 1].isCompleted = true;
+                      }
                     });
                     return _showMyDialog(
                       'Congratulations',
@@ -153,8 +164,11 @@ class _McqTileState extends State<McqTile> {
                   if (arr == widget.correctAnswer) {
                     // Navigator.pushNamed(context, widget.nextLevelPath);
                     setState(() {
-                      Level.levelsList[widget.level + 1].isCompleted = true;
-                      Level.levelsList2[widget.level + 1].isCompleted = true;
+                      if (widget.isSevenYears) {
+                        Level.levelsList[widget.level + 1].isCompleted = true;
+                      } else {
+                        Level.levelsList2[widget.level + 1].isCompleted = true;
+                      }
                     });
                     return _showMyDialog(
                       'Congratulations',

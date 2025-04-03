@@ -120,6 +120,7 @@ In addition, there are symbols that cannot be used, such as “;
                     ),
                     const SizedBox(height: 10),
                     McqTile(
+                      isSevenYears: false,
                       level: level,
                       correctAnswer: 'b',
                       questionTitle: 'num = 3.2\nData Type of this variable',

@@ -47,6 +47,7 @@ class LoginPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextField(
+                    cursorColor: Colors.white,
                     controller: loginInput,
                     keyboardType: TextInputType.numberWithOptions(),
                     decoration: InputDecoration(

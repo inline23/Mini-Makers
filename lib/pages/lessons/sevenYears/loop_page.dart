@@ -85,6 +85,7 @@ class _LoopPageState extends State<LoopPage> {
                     // const SizedBox(height: 20),
                     // Question Tile
                     McqTile(
+                      isSevenYears: true,
                       level: widget.level,
                       correctAnswer: 'b',
                       questionTitle: 'The Block never Stop :',

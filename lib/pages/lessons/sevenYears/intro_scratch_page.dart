@@ -112,6 +112,7 @@ class _IntroScratchPageState extends State<IntroScratchPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: McqTile(
+              isSevenYears: true,
               level: widget.level,
               correctAnswer: 'a',
               questionTitle: 'Scratch Open From:',
